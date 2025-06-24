@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +23,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/sweetalert.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
 
-    @stack("styles")
+    @stack('styles')
 </head>
 
 <body class="body">
@@ -39,8 +40,8 @@
                 <div class="section-menu-left">
                     <div class="box-logo">
                         <a href="{{ route('admin.index') }}" id="site-logo-inner">
-                            <img class="" id="logo_header_1" alt="" src="{{ asset('images/logo/logo.png')}}"
-                                data-light="{{ asset('images/logo/logo2.png')}}" data-dark="{{ asset('images/logo/logo2.png')}}">
+                            <img class="" id="logo_header_1" alt=""
+                                src="{{ asset('assets/images/logo2.png') }}">
                         </a>
                         <div class="button-show-hide">
                             <i class="icon-menu-left"></i>
@@ -122,7 +123,7 @@
                                     </a>
                                     <ul class="sub-menu">
                                         <li class="sub-menu-item">
-                                            <a href="{{route('admin.orders')}}" class="">
+                                            <a href="{{ route('admin.orders') }}" class="">
                                                 <div class="text">Orders</div>
                                             </a>
                                         </li>
@@ -134,19 +135,19 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{route('admin.slides')}}" class="">
+                                    <a href="{{ route('admin.slides') }}" class="">
                                         <div class="icon"><i class="icon-image"></i></div>
                                         <div class="text">Slides</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{route('admin.coupons')}}" class="">
+                                    <a href="{{ route('admin.coupons') }}" class="">
                                         <div class="icon"><i class="icon-grid"></i></div>
                                         <div class="text">Coupons</div>
                                     </a>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="{{route('admin.contacts')}}" class="">
+                                    <a href="{{ route('admin.contacts') }}" class="">
                                         <div class="icon"><i class="icon-mail"></i></div>
                                         <div class="text">Messages</div>
                                     </a>
@@ -160,22 +161,16 @@
                                 </li>
 
                                 <li class="menu-item">
-                                    <a href="settings.html" class="">
-                                        <div class="icon"><i class="icon-settings"></i></div>
-                                        <div class="text">Settings</div>
-                                    </a>
-                                </li>
-
-                                <li class="menu-item">
                                     <form method="POST" action="{{ route('logout') }}" id="logout-form">
                                         @csrf
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             <div class="icon"><i class="icon-log-out"></i></div>
                                             <div class="text">Logout</div>
                                         </a>
                                     </form>
                                 </li>
-                                
+
 
                             </ul>
                         </div>
@@ -187,9 +182,11 @@
                         <div class="wrap">
                             <div class="header-left">
                                 <a href="index-2.html">
-                                    <img class="" id="logo_header_mobile" alt="" src="{{ asset('images/logo/logo.png')}}"
-                                        data-light="{{ asset('images/logo/logo2.png')}}" data-dark="{{ asset('images/logo/logo2.png')}}"
-                                        data-width="154px" data-height="52px" data-retina="{{ asset('images/logo/logo2.png')}}">
+                                    <img class="" id="logo_header_mobile" alt=""
+                                        src="{{ asset('images/logo/logo.png') }}"
+                                        data-light="{{ asset('images/logo/logo2.png') }}"
+                                        data-dark="{{ asset('images/logo/logo2.png') }}" data-width="154px"
+                                        data-height="52px" data-retina="{{ asset('images/logo/logo2.png') }}">
                                 </a>
                                 <div class="button-show-hide">
                                     <i class="icon-menu-left"></i>
@@ -198,8 +195,9 @@
 
                                 <form class="form-search flex-grow">
                                     <fieldset class="name">
-                                        <input type="text" placeholder="Search here..." class="show-search" name="name" id="search-input"
-                                            tabindex="2" value="" aria-required="true" required="" autocomplete="off">
+                                        <input type="text" placeholder="Search here..." class="show-search"
+                                            name="name" id="search-input" tabindex="2" value=""
+                                            aria-required="true" required="" autocomplete="off">
                                     </fieldset>
                                     <div class="button-submit">
                                         <button class="" type="submit"><i class="icon-search"></i></button>
@@ -271,7 +269,8 @@
                                                     <div>
                                                         <div class="body-title-2">Order pending: <span>ID 305830</span>
                                                         </div>
-                                                        <div class="text-tiny">Ultricies at rhoncus at ullamcorper</div>
+                                                        <div class="text-tiny">Ultricies at rhoncus at ullamcorper
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </li>
@@ -349,7 +348,7 @@
                     </div>
                     <div class="main-content">
                         @yield('content')
-                       <div class="bottom-page">
+                        <div class="bottom-page">
                             <div class="body-text">Copyright © 2024 SurfsideMedia</div>
                         </div>
                     </div>
@@ -359,34 +358,37 @@
         </div>
     </div>
 
-    <script src=" {{ asset('js/jquery.min.js')}}"></script>
-    <script src=" {{ asset('js/bootstrap.min.js')}}"></script>
-    <script src=" {{ asset('js/bootstrap-select.min.js')}}"></script>   
-    <script src=" {{ asset('js/sweetalert.min.js')}}"></script>    
-    <script src=" {{ asset('js/apexcharts/apexcharts.js')}}"></script>
+    <script src=" {{ asset('js/jquery.min.js') }}"></script>
+    <script src=" {{ asset('js/bootstrap.min.js') }}"></script>
+    <script src=" {{ asset('js/bootstrap-select.min.js') }}"></script>
+    <script src=" {{ asset('js/sweetalert.min.js') }}"></script>
+    <script src=" {{ asset('js/apexcharts/apexcharts.js') }}"></script>
 
     <script>
-        $(function(){
-          $("#search-input").on("keyup",function(){
-            var searchQuery = $(this).val();
-            if(searchQuery.length >2){
-              $.ajax({
-                type: "GET",
-                url: "{{ route('admin.search') }}",
-                data: {query: searchQuery},
-                dataType: "json", 
-                success: function(data){
-                  $("#box-content-search").html('');
-                  $.each(data, function(index, item){
-                    var url = "{{route('admin.product.edit',['id' => 'product_id'])}}";
-                    var link = url.replace('product_id', item.id);
-  
-                    $("#box-content-search").append(`
+        $(function() {
+            $("#search-input").on("keyup", function() {
+                var searchQuery = $(this).val();
+                if (searchQuery.length > 2) {
+                    $.ajax({
+                        type: "GET",
+                        url: "{{ route('admin.search') }}",
+                        data: {
+                            query: searchQuery
+                        },
+                        dataType: "json",
+                        success: function(data) {
+                            $("#box-content-search").html('');
+                            $.each(data, function(index, item) {
+                                var url =
+                                    "{{ route('admin.product.edit', ['id' => 'product_id']) }}";
+                                var link = url.replace('product_id', item.id);
+
+                                $("#box-content-search").append(`
                       <li>
                           <ul>
                               <li class = "product-item gap14 mb-10">
                                   <div class = "image no-bg">
-                                      <img src = "{{asset('uploads/products/thumbnails')}}/${item.image}" alt="${item.image}">
+                                      <img src = "{{ asset('uploads/products/thumbnails') }}/${item.image}" alt="${item.image}">
                                   </div>
                                   <div class = "flex items-center justify-between gap20 flex-grow">
                                       <div class = "name">
@@ -400,17 +402,17 @@
                           </ul>
                       </li>
                     `);
-                  });
+                            });
+                        }
+                    });
                 }
-              });
-            }
-          });
+            });
         });
-      </script>
+    </script>
 
-    <script src=" {{ asset('js/main.js')}}"></script>
-    
-    @stack("scripts")
+    <script src=" {{ asset('js/main.js') }}"></script>
+
+    @stack('scripts')
 </body>
 
 </html>
